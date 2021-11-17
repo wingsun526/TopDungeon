@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 //[RequireComponent(typeof(BoxCollider2D))]
-public class Player : MonoBehaviour
+public class Player : Fighter
 {
     
     private Vector2 rawInput;
