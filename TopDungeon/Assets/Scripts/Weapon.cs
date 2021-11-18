@@ -28,7 +28,7 @@ public class Weapon : Collidable
     {
         base.Update();
 
-        if (Keyboard.current[Key.Space].wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Time.time - lastSwing > cooldown)
             {

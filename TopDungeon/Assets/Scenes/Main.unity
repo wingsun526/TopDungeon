@@ -11887,6 +11887,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7574837863985916027, guid: 28f52bde49538be49b6721ad79c1507a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574837863985916027, guid: 28f52bde49538be49b6721ad79c1507a, type: 3}
       propertyPath: m_TagString
       value: Fighter
       objectReference: {fileID: 0}
@@ -11934,7 +11938,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7574837863985916000, guid: 28f52bde49538be49b6721ad79c1507a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28f52bde49538be49b6721ad79c1507a, type: 3}
 --- !u!1001 &7590228110318110993
 PrefabInstance:
