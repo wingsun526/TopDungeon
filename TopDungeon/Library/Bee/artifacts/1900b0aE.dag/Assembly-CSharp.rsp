@@ -341,6 +341,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/CameraMotor.cs"
+"Assets/Scripts/CharacterMenu.cs"
 "Assets/Scripts/Chest.cs"
 "Assets/Scripts/Collectable.cs"
 "Assets/Scripts/Collidable.cs"
