@@ -13,13 +13,17 @@ public class GameManager : MonoBehaviour
         if (GameManager.instance != null)
         {
             Destroy(gameObject);
+            Destroy(player.gameObject);
+            Destroy(floatingTextManager.gameObject);
+            Destroy(hud);
+            Destroy(menu);
             return;
         }
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
-        
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+
     }
     
     
@@ -33,6 +37,9 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
+    public RectTransform hitpointBar;
+    public GameObject hud;
+    public GameObject menu;
     
     // Logic
     public int pesos;
@@ -59,6 +66,13 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+    
+    // Hitpoint Bar
+    public void OnHitpointChange()
+    {
+        float ratio = (float) player.hitpoint / (float) player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(1, ratio, 1);
     }
     
     // Experience System
@@ -102,18 +116,17 @@ public class GameManager : MonoBehaviour
             OnLevelUp();
         }
     }
-    
     public void OnLevelUp()
     {
         player.OnLevelUp();
+        OnHitpointChange();
     }
-    // Save state
     
-    // INT preferedSkin
-    // INT pesos
-    // INT experience
-    // INT weaponLevel
-    
+    // On Scene Loaded
+    public void OnSceneLoaded(Scene s, LoadSceneMode mode)
+    {
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+    }
     
     
     public void SaveState()
@@ -131,6 +144,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadState(Scene s, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= LoadState;
         
         if (!PlayerPrefs.HasKey("SaveState"))
         {
@@ -145,12 +159,13 @@ public class GameManager : MonoBehaviour
         
         // Experience
         experience = int.Parse(data[2]);
-        player.SetLevel(GetCurrentLevel());
+        if(GetCurrentLevel() != 1)
+            player.SetLevel(GetCurrentLevel());
         
         // Change the weapon Level
         weapon.SetWeaponLevel(int.Parse(data[3]));
         
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+        
         
         
     }

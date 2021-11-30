@@ -307,10 +307,10 @@ TextureImporter:
     second: wall_0
   - first:
       213: 2676561953846364279
-    second: Atlas_101
+    second: crateSingle_top
   - first:
       213: 5150473195151649443
-    second: Atlas_102
+    second: crateDouble_top
   - first:
       213: -1656842854750192170
     second: Atlas_103
@@ -355,10 +355,10 @@ TextureImporter:
     second: Atlas_116
   - first:
       213: 2322255078549889286
-    second: Atlas_117
+    second: crateSingle_bottom
   - first:
       213: -1927701862735519164
-    second: Atlas_118
+    second: crateDouble_bottom
   - first:
       213: 5867767232804167169
     second: Atlas_119
@@ -2389,7 +2389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_101
+      name: crateSingle_top
       rect:
         serializedVersion: 2
         x: 80
@@ -2410,7 +2410,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_102
+      name: crateDouble_top
       rect:
         serializedVersion: 2
         x: 96
@@ -2725,7 +2725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_117
+      name: crateSingle_bottom
       rect:
         serializedVersion: 2
         x: 80
@@ -2746,7 +2746,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_118
+      name: crateDouble_bottom
       rect:
         serializedVersion: 2
         x: 96
